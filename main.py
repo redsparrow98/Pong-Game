@@ -2,8 +2,8 @@
 #create the boards class for users inputs (from turtle class inheritance)
 #create the boards class 2 users
 #create the pong (ball) class and make it move (from turtle inheritance)
-#figure out colision with the wall and bounce
-#detect colision with board and bounce back
+#figure out collision with the wall and bounce
+#detect collision with board and bounce back
 #detect missed ball
 #create the score class (also turtle inheritance)
 
@@ -36,27 +36,26 @@ screen.onkey(fun= l_paddle.go_down, key="s")
 
 game_is_on = True
 while game_is_on:
-  time.sleep(ball.move_speed)
-  screen.update()  
-  ball.move()
+	time.sleep(ball.move_speed)
+	screen.update()  
+	ball.move()
 
-  #detect colision with top and bottom wall to bounce
-  if ball.ycor() > 280 or ball.ycor() < -270:
-    ball.bounce_y()
+	#detect colision with top and bottom wall to bounce
+	if ball.ycor() > 280 or ball.ycor() < -270:
+		ball.bounce_y()
 
-  #detect colision with paddles
-  if ball.distance(r_paddle) < 50 and ball.xcor() > 350 or ball.distance(l_paddle) < 50 and ball.xcor() < - 350:
-    ball.bounce_x()
+	#detect colision with paddles
+	if ball.distance(r_paddle) < 50 and ball.xcor() > 350 or ball.distance(l_paddle) < 50 and ball.xcor() < - 350:
+		ball.bounce_x()
 
-  #detect the ball going out of bounds and missing the r_paddle
-  if ball.distance(r_paddle) > 50 and ball.xcor() > 380:
-    ball.reset_position()
-    scoreboard.l_point()
+	#detect the ball going out of bounds and missing the r_paddle
+	if ball.distance(r_paddle) > 50 and ball.xcor() > 380:
+		ball.reset_position()
+		scoreboard.l_point()
 
-  #detect the ball going out of bounds and missing the l_paddle
-  if ball.distance(l_paddle) > 50 and ball.xcor() < -380:
-    ball.reset_position()
-    scoreboard.r_point()
-
+	#detect the ball going out of bounds and missing the l_paddle
+	if ball.distance(l_paddle) > 50 and ball.xcor() < -380:
+		ball.reset_position()
+		scoreboard.r_point()
 
 screen.exitonclick()
