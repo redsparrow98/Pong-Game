@@ -23,7 +23,7 @@ scoreboard = Scoreboard()
 screen = Screen()
 screen.setup(width= 800, height= 600)
 screen.bgcolor("black")
-screen.title("Nats Pong Game")
+screen.title("Nat's Pong Game")
 screen.tracer(0)
 
 
@@ -36,26 +36,26 @@ screen.onkey(fun= l_paddle.go_down, key="s")
 
 game_is_on = True
 while game_is_on:
-	time.sleep(ball.move_speed)
-	screen.update()  
-	ball.move()
+    time.sleep(ball.move_speed)
+    screen.update()  
+    ball.move()
 
-	#detect colision with top and bottom wall to bounce
-	if ball.ycor() > 280 or ball.ycor() < -270:
-		ball.bounce_y()
+    # detect collision with top and bottom wall to bounce
+    if ball.ycor() > 280 or ball.ycor() < -270:
+        ball.bounce_y()
 
-	#detect colision with paddles
-	if ball.distance(r_paddle) < 50 and ball.xcor() > 350 or ball.distance(l_paddle) < 50 and ball.xcor() < - 350:
-		ball.bounce_x()
+    # detect collision with paddles
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 350 or ball.distance(l_paddle) < 50 and ball.xcor() < - 350:
+        ball.bounce_x()
 
-	#detect the ball going out of bounds and missing the r_paddle
-	if ball.distance(r_paddle) > 50 and ball.xcor() > 380:
-		ball.reset_position()
-		scoreboard.l_point()
+    # detect the ball going out of bounds and missing the r_paddle
+    if ball.distance(r_paddle) > 50 and ball.xcor() > 380:
+        ball.reset_position()
+        scoreboard.l_point()
 
-	#detect the ball going out of bounds and missing the l_paddle
-	if ball.distance(l_paddle) > 50 and ball.xcor() < -380:
-		ball.reset_position()
-		scoreboard.r_point()
+    # detect the ball going out of bounds and missing the l_paddle
+    if ball.distance(l_paddle) > 50 and ball.xcor() < -380:
+        ball.reset_position()
+        scoreboard.r_point()
 
 screen.exitonclick()
