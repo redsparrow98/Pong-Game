@@ -3,6 +3,16 @@ from turtle import Turtle
 MOVE_FORWARD = 1
 
 class Ball(Turtle):
+    """This class inherits from the Turtle class and it initializes how the ball
+    acts in the game
+    it has 4 functions:
+    
+    > move
+    > bounce_y
+    > bounce_x
+    > reset_position
+    
+    """
 
     def __init__(self):
         """Creates a square ball for the game"""

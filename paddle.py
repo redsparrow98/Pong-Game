@@ -1,9 +1,18 @@
 from turtle import Turtle
 
 class Paddle(Turtle):
+    """This class inherits from the Turtle class and it creates the
+    paddles and how they behave in the game
+    it has 2 functions
+    
+    > go_up
+    > go_down
+    
+    """
 
     def __init__(self, starting_pos):
-        """creates a paddle on the screen white color. it takes a tuple for (x, y) position for starter position."""
+        """creates a paddle on the screen white color.
+        it takes a tuple for (x, y) position for starter position."""
         super().__init__()
         self.penup()
         self.shape("square")

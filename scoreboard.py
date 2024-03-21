@@ -10,9 +10,9 @@ class Scoreboard(Turtle):
         self.hideturtle()
         self.l_score = 0
         self.r_score = 0
-        self.update_Scoreboard()   
+        self.update_scoreboard()
 
-    def update_Scoreboard(self):
+    def update_scoreboard(self):
         """updates scoreboards with the l and r score"""
         self.clear()
         self.goto(-80, 200)
@@ -21,11 +21,13 @@ class Scoreboard(Turtle):
         self.write(self.r_score, align="center", font=("Courier", 50, "normal"))
 
     def l_point(self):
-        """increases l score when right paddle misses and calls the updat score to update it on the screan"""
+        """increases l score when right paddle misses and calls the
+        update score to update it on the screen"""
         self.l_score +=1
-        self.update_Scoreboard()
+        self.update_scoreboard()
 
     def r_point(self):
-        """increases r score when left paddle misses and calls the updat score to update it on the screan"""
+        """increases r score when left paddle misses and calls the
+        update score to update it on the screen"""
         self.r_score +=1
-        self.update_Scoreboard()
+        self.update_scoreboard()
