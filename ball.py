@@ -3,11 +3,11 @@ from turtle import Turtle
 MOVE_FORWARD = 1
 
 class Ball(Turtle):
-    """This class inherits from the Turtle class and it initializes how the ball
+    """This class inherits from the Turtle class, and it initializes how the ball
     acts in the game
-    it has 4 functions:
+    it has four functions:
     
-    > move
+    > Move
     > bounce_y
     > bounce_x
     > reset_position
@@ -32,16 +32,16 @@ class Ball(Turtle):
         self.goto(new_x, new_y)
 
     def bounce_y(self):
-        """reverses the y_move to -10 and it should bounce of the top an bottom wall"""
+        """reverses the y_move to -10, and it should bounce of the top and bottom wall"""
         self.y_move *= -1
 
     def bounce_x(self):
-        """reverses the x_move to -10 and it should bounce of the top an bottom wall"""
+        """reverses the x_move to -10, and it should bounce of the top and bottom wall"""
         self.x_move *= -1
         self.move_speed *= 0.9
 
     def reset_position(self):
-        """reset ball to home and start in the opposite direction"""
+        """reset the ball home and start in the opposite direction"""
         self.goto(0, 0)
         self.move_speed = 0.1
         self.bounce_x()

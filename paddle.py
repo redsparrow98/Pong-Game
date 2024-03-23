@@ -1,11 +1,11 @@
 from turtle import Turtle
 
 class Paddle(Turtle):
-    """This class inherits from the Turtle class and it creates the
-    paddles and how they behave in the game
-    it has 2 functions
+    """This class inherits from the Turtle class, and it creates the
+    paddles and how they behave in the game,
+    it has two functions
     
-    > go_up
+    > Go_up
     > go_down
     
     """
@@ -21,11 +21,11 @@ class Paddle(Turtle):
         self.shapesize(stretch_wid= 5, stretch_len= 1)
 
     def go_up(self):
-        """moves the paddle up by 20 pixel spaces on the y axis"""
+        """moves the paddle up by 20 pixel spaces on the y-axis"""
         new_y = self.ycor() + 20
         self.goto(self.xcor(), new_y)
 
     def go_down(self):
-        """moves the paddle down by 20 pixel spaces on the y axis"""
+        """moves the paddle down by 20 pixel spaces on the y-axis"""
         new_y = self.ycor() - 20
         self.goto(self.xcor(), new_y)

@@ -34,7 +34,7 @@ screen.onkey(fun= r_paddle.go_down, key="Down")
 screen.onkey(fun= l_paddle.go_up, key="w")
 screen.onkey(fun= l_paddle.go_down, key="s")
 
-# creats a main while loop for the game
+# Creates a main while loop for the game
 game_is_on = True
 while game_is_on:
     time.sleep(ball.move_speed)
